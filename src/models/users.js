@@ -19,20 +19,9 @@ const userSchema = new mongoose.Schema({
 			  throw new Error('Email is invalid')
 		}
 	},
-	age:{
-		type:Number,
-		default: 0,
-		validate(value){
-			if(value < 0)
-			  throw new Error('Age must be a positive number')
-		}
-	},
 	dob:{
 		type:Date,
 		required:true,
-	},
-	feePayed:{
-		type:Boolean
 	},
 	password:{
 		type:String,

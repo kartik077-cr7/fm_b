@@ -30,4 +30,23 @@ router.post('/users/login', async(req,res) => {
 	}
 })
 
+router.post('/users/register',async(req,res) => {
+	
+	console.log("loging request received",req.body);
+	
+	console.log('req.body is ',req.body);
+
+	try{
+		const user = new User({
+			...req.body,
+		});
+
+		await user.save();
+		res.send({user});
+	}catch(e){
+		res.status(400).send(e);
+	}
+
+})
+
 module.exports = router
