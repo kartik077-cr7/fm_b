@@ -1,7 +1,7 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const connectionURL ="mongodb+srv://kartik:CSEkartik@cluster0.yzpph30.mongodb.net/?retryWrites=true&w=majority";
-const database = 'customer_data'
+const database = 'test'
 
 MongoClient.connect(connectionURL, {useNewUrlParser:true}, (error,client) => {
 
@@ -12,5 +12,5 @@ MongoClient.connect(connectionURL, {useNewUrlParser:true}, (error,client) => {
 	}
 
 	const db = client.db(database);
-  db.collection('users').insertOne({ title: "HELLO EVERYONE "})
+  db.collection('slots').insertOne({number:4,startTime:"5",endTime:"6",prefix:"PM"})
 })

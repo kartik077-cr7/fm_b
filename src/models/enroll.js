@@ -12,7 +12,7 @@ const enrollSchema = new mongoose.Schema({
 		required:true,
 	},
 	batch:{
-		type:Number,
+		type:mongoose.Schema.Types.ObjectId,
 		required:true,
 	}
 })
